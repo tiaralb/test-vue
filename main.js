@@ -45,14 +45,14 @@ new Vue({
 
         getEdit: function (product) {
             this.dialogEdit = true;
-            this.productIdEdit = product.product_id;
+            this.productIdEdit = product.id;
             this.productNameEdit = product.product_name;
             this.productPriceEdit = product.product_price;
         },
 
         getDelete: function (product) {
             this.dialogDelete = true;
-            this.productIdDelete = product.product_id;
+            this.productIdDelete = product.id;
             this.productNameDelete = product.product_name;
         },
 

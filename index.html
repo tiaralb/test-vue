@@ -15,43 +15,13 @@
         <v-app>
             <v-main>
                 <v-container>
-                    <!-- Modal Add New Product -->
                     <template>
-                        <v-dialog v-model="dialogAdd" persistent max-width="600px">
-                            <template v-slot:activator="{ on, attrs }">
-                                <v-btn color="primary" dark v-bind="attrs" v-on="on">
-                                    Add New
-                                </v-btn>
-                            </template>
-                            <v-card>
-                                <v-card-title>
-                                    <span class="headline">Add New Product</span>
-                                </v-card-title>
-                                <v-card-text>
-                                    <v-container>
-                                        <v-row>
-                                            <v-col cols="12">
-                                                <v-text-field label="Product Name*" v-model="productName" required>
-                                                </v-text-field>
-                                            </v-col>
-                                            <v-col cols="12">
-                                                <v-text-field label="Price*" v-model="productPrice" required>
-                                                </v-text-field>
-                                            </v-col>
-                                        </v-row>
-                                    </v-container>
-                                    <small>*indicates required field</small>
-                                </v-card-text>
-                                <v-card-actions>
-                                    <v-spacer></v-spacer>
-                                    <v-btn color="blue darken-1" text @click="dialogAdd = false">Close</v-btn>
-                                    <v-btn color="blue darken-1" text @click="saveProduct">Save</v-btn>
-                                </v-card-actions>
-                            </v-card>
-                        </v-dialog>
+                    <header>
+                        <h1>List of Product</h1>
+                    </header>
                     </template>
-
-                    <!-- Modal Update Product -->
+                    <br>
+                   
                     <template>
                         <v-dialog v-model="dialogEdit" persistent max-width="600px">
                             <v-card>
@@ -71,7 +41,6 @@
                                             </v-col>
                                         </v-row>
                                     </v-container>
-                                    <small>*indicates required field</small>
                                 </v-card-text>
                                 <v-card-actions>
                                     <v-spacer></v-spacer>
@@ -82,7 +51,6 @@
                         </v-dialog>
                     </template>
 
-                    <!-- Modal Delete Product -->
                     <template>
                         <v-dialog v-model="dialogDelete" persistent max-width="600px">
                             <v-card>
@@ -121,10 +89,15 @@
                                         <td>{{ product.product_name }}</td>
                                         <td>{{ product.product_price }}</td>
                                         <td>
-                                            <v-btn color="info" depressed small @click="getEdit(product)">
+                                        <v-btn color="info" depressed small @click="getEdit(product)">
+                                        <v-icon left> mdi-pencil </v-icon>
+                                            Edit
+                                        </v-btn>
+                                            <!-- <v-btn color="info" depressed small @click="getEdit(product)">
                                                 Edit
-                                            </v-btn>
+                                            </v-btn> -->
                                             <v-btn color="error" depressed small @click="getDelete(product)">
+                                                <v-icon left>  mdi-minus-circle </v-icon>
                                                 Delete
                                             </v-btn>
                                         </td>
@@ -133,12 +106,47 @@
                             </template>
                         </v-simple-table>
                     </template>
+                    <br>
+                    <template>
+                        <v-dialog v-model="dialogAdd" persistent max-width="600px">
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-btn color="primary" dark v-bind="attrs" v-on="on">
+                                    Add New Product
+                                </v-btn>
+                            </template>
+                            <v-card>
+                                <v-card-title>
+                                    <span class="headline">Add New Product</span>
+                                </v-card-title>
+                                <v-card-text>
+                                    <v-container>
+                                        <v-row>
+                                            <v-col cols="12">
+                                                <v-text-field  :rules="[v => !!v || 'Product is required']" label="Product Name*" v-model="productName" required>
+                                                </v-text-field>
+                                            </v-col>
+                                            <v-col cols="12">
+                                                <v-text-field :rules="[v => !!v || 'Price is required']" label="Price*" v-model="productPrice" required>
+                                                </v-text-field>
+                                            </v-col>
+                                        </v-row>
+                                    </v-container>
+                                </v-card-text>
+                                <v-card-actions>
+                                    <v-spacer></v-spacer>
+                                    <v-btn color="blue darken-1" text @click="dialogAdd = false">Close</v-btn>
+                                    <v-btn color="blue darken-1" text @click="saveProduct">Save</v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </v-dialog>
+                    </template>
+
 
                 </v-container>
             </v-main>
         </v-app>
     </div>
-
+   
     <script src="vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

@@ -1,24 +1,34 @@
 {
   "products": [
     {
-      "product_id": 1,
-      "product_name": "Tiara",
-      "product_price": 12000
+      "product_name": "Book",
+      "product_price": "6000",
+      "id": 1
     },
     {
-      "product_id": 2,
-      "product_name": "Tiara",
-      "product_price": 12000
+      "id": 2,
+      "product_name": "Pencil",
+      "product_price": 3000
     },
     {
-      "product_id": 3,
-      "product_name": "Tiara Laksmi Basuki",
-      "product_price": 12000
+      "id": 3,
+      "product_name": "Eraser",
+      "product_price": 2000
     },
     {
-      "product_id": 4,
-      "product_name": "Tiara",
-      "product_price": 12000
+      "id": 4,
+      "product_name": "Pen",
+      "product_price": 4000
+    },
+    {
+      "id": 5,
+      "product_name": "Ruler",
+      "product_price": 5000
+    },
+    {
+      "id": 6,
+      "product_name": "Tip-x",
+      "product_price": 8000
     }
   ]
 }
