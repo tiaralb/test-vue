@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "product_id": 1,
+      "product_name": "Tiara",
+      "product_price": 12000
+    },
+    {
+      "product_id": 2,
+      "product_name": "Tiara",
+      "product_price": 12000
+    },
+    {
+      "product_id": 3,
+      "product_name": "Tiara Laksmi Basuki",
+      "product_price": 12000
+    },
+    {
+      "product_id": 4,
+      "product_name": "Tiara",
+      "product_price": 12000
+    }
+  ]
+}
